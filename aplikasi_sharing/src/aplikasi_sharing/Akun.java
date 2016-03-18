@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class Akun {
 	private String nama;
 	private int nTeman = 0;
+        private int nFollow = 0;
 	private int maxTeman;
 	private String password;
 	private Akun[] friend;
@@ -27,8 +28,23 @@ public class Akun {
 		this.nama = nama;
 		this.password = password;
 	}
-	
-	public void setNama(String nama){
+        
+        public Akun(String nama){
+                 this.nama = nama;
+        }
+        
+        public void FollowAkun (Akun p ,String nama) {
+                tambahFollow(p,nama);
+     }
+        
+        public void tambahFollow (Akun p, String nama) {
+                this.nama = nama;
+                this.friend[nFollow] = p;
+                nFollow++;
+        }
+        
+
+        public void setNama(String nama){
 		this.nama = nama;
 	}
 	
@@ -60,8 +76,5 @@ public class Akun {
 	    if (!ketemu) {
 		System.out.println("Remove Teman Gagal");
 	}
-}
-
-
-	
+        }
 }
