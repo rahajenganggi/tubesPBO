@@ -15,6 +15,8 @@ import java.util.ArrayList;
  */
 public class Akun {
 	private String nama;
+        private int ukuran;
+        private String jenis;
 	private int nTeman = 0;
         private int nFollow = 0;
 	private int maxTeman;
@@ -23,6 +25,7 @@ public class Akun {
         private ArrayList<Akun> friends = new ArrayList();
 	private Teman[] teman;
 	private Media[] media;
+        private Foto[] foto;
 	
 	public Akun(String nama, String password){
 		this.nama = nama;
@@ -41,6 +44,12 @@ public class Akun {
                 this.nama = nama;
                 this.friend[nFollow] = p;
                 nFollow++;
+        }
+        
+        public void CreateFoto (Media m){
+            m.setNama(nama);
+            m.setUkuran(ukuran);
+            m.setJenis(jenis);
         }
         
 
